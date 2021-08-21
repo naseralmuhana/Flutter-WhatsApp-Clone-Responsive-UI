@@ -13,6 +13,7 @@ class ChatsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: ListView.builder(
+        padding: const EdgeInsets.all(0),
         itemCount: chats.length,
         itemBuilder: (context, index) {
           final Chat chat = chats[index];
@@ -20,9 +21,17 @@ class ChatsWidget extends StatelessWidget {
             title: Text(chat.memberTwoName),
             leading: ProfileAvatar(imageUrl: chat.memberTwoProfilePicUrl),
             subtitle: Text(chat.messagesList.last.text),
+            trailing: Text(
+              chat.messagesList.last.time,
+              style: TextStyle(
+                color: Colors.grey[500],
+                fontSize: 14.0,
+              ),
+            ),
           );
         },
       ),
     );
   }
 }
+//TODO: Here last thing

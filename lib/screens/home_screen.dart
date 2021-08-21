@@ -16,6 +16,7 @@ class HomeScreen extends StatelessWidget {
       body: DefaultTabController(
         length: 3,
         child: NestedScrollView(
+          floatHeaderSlivers: true,
           headerSliverBuilder: (context, innerBoxIsScrolled) {
             return [
               SliverAppBar(
@@ -52,16 +53,8 @@ class HomeScreen extends StatelessWidget {
               ChatsWidget(
                 chats: chats,
               ),
-              Container(
-                color: Colors.blue,
-                width: double.infinity,
-                height: double.infinity,
-              ),
-              Container(
-                color: Colors.yellow,
-                width: double.infinity,
-                height: double.infinity,
-              ),
+              Container(color: Colors.blue),
+              Container(color: Colors.yellow),
             ],
           ),
         ),
